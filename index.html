@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentSpace Waitlist</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8fdfb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(135deg, #618cb7, #9cc3ea);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .reasons, .form-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .reasons ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .reasons ul li {
+      padding: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input {
+      padding: 0.9rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #618cb7;
+    }
+
+    button {
+      background: #618cb7;
+      color: white;
+      font-size: 1.1rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background:#618cb7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f0fdfa;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #618cb7;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚀 Smart Nigerians Don’t Panic for Rent — They Plan with Us.</h1>
+    <p>
+      Rent Smarter. Live Better.<br>
+      Say goodbye to rent stress! With <b>RentSpace</b>, you can save for your house rent easily, 
+      get quick rent loans when you need it, and even earn bonuses for staying consistent.
+    </p>
+  </header>
+
+  <section class="reasons">
+    <h2>Why Join the Waitlist?</h2>
+    <ul>
+      <li>🔑 Early Access + chance to win ₦10,000 for first 10 downloads.</li>
+      <li>🎁 ₦1,000 Welcome Bonus at launch.</li>
+      <li>💡 Smart Tools to save, plan & pay rent without pressure.</li>
+      <li>🎉 Exclusive Rewards only for early birds.</li>
+    </ul>
+  </section>
+
+  <section class="form-section">
+    <h2>󰜹 Join the Waitlist Now!</h2>
+    <p>Fill in your details below to secure your spot 👇</p>
+
+    <form id="waitlistForm">
+      <input type="text" id="name" placeholder="📝 Full Name" required>
+      <input type="email" id="email" placeholder="📧 Email Address" required>
+      <input type="tel" id="phone" placeholder="📱 Phone Number" required>
+      <button type="submit">👉 Count Me In!</button>
+    </form>
+    <p id="responseMsg" style="color: green; margin-top: 1rem; font-weight: bold;"></p>
+  </section>
+
+  <section>
+    <h2>Be Part of the Movement 💚</h2>
+    <p>
+      In Nigeria, rent wahala is real — but together, we’re changing the story. 
+      Join thousands of smart Nigerians already signing up for a better way to handle rent.
+    </p>
+  </section>
+
+  <footer>
+    <p>📌 For More Information & Updates</p>
+    <p>
+      🌐 <a href="https://www.rentspace.tech" target="_blank">Website</a> |
+      📸 <a href="https://www.instagram.com/rentspacetech" target="_blank">Instagram</a> |
+      📘 <a href="https://www.facebook.com/share/19MAFG7hKK/?mibextid=wwXIfr" target="_blank">Facebook</a> |
+      💼 <a href="https://www.linkedin.com/company/rentspace.tech/" target="_blank">LinkedIn</a> |
+      🐦 <a href="https://x.com/rentspacetech?s=21" target="_blank">Twitter (X)</a>
+    </p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('waitlistForm');
+    const responseMsg = document.getElementById('responseMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      if(name === "" || email === "" || phone === "") {
+        responseMsg.style.color = "red";
+        responseMsg.textContent = "⚠️ Please fill all fields.";
+        return;
+      }
+
+      // Here you can connect to your backend / Google Sheet API etc.
+      console.log("Form Submitted:", {name, email, phone});
+
+      responseMsg.style.color = "green";
+      responseMsg.textContent = "✅ Thank you! You’ve been added to the waitlist.";
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
