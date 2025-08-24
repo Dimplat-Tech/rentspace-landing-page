@@ -132,7 +132,7 @@
     <h2>󰜹 Join the Waitlist Now!</h2>
     <p>Fill in your details below to secure your spot 👇</p>
 
-    <form id="waitlistForm" method="post">
+    <form id="waitlistForm">
       <input type="text" id="name" placeholder="📝 Full Name" required>
       <input type="email" id="email" placeholder="📧 Email Address" required>
       <input type="tel" id="phone" placeholder="📱 Phone Number" required>
@@ -159,12 +159,32 @@
       🐦 <a href="https://x.com/rentspacetech?s=21" target="_blank">Twitter (X)</a>
     </p>
   </footer>
+
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("m6Q_IysaaC6Xd7AVW"); // Replace with your actual public key
+  })();
+</script>
+<script>
+  document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_45ijbft', 'template_tpnxbv9', this)
+      .then(function(response) {
+        alert('Email sent successfully!');
+        console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+        alert('Failed to send email.');
+        console.log('FAILED...', error);
+      });
+  });
+</script>
+
+  <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> 
 
 
-
-
-<!-- <script>
+ <script>
 
   (function() {
     emailjs.init("m6Q_IysaaC6Xd7AVW"); // Replace with your public key
@@ -188,9 +208,9 @@
         console.error(error);
       });
   });
-</script> -->
-
-<script>
+</script>  -->
+<!-- 
+ <script>
   const form = document.getElementById("waitlistForm");
   const responseMsg = document.getElementById("responseMsg");
 
@@ -215,8 +235,7 @@
       responseMsg.textContent = "Welcome to RentSpace! You've been added to the waitlist.";
     }
   });
-</script>
-<script src="server.js"></script>
+</script> -->
 
 
 </body>
