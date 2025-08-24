@@ -170,7 +170,11 @@
   document.getElementById('waitlistForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_45ijbft', 'template_tpnxbv9', this)
+    emailjs.sendForm('service_45ijbft', 'template_tpnxbv9', {
+      Name: document.getElementById("name").value,
+      Email: document.getElementById("email").value,
+      Phone: document.getElementById("phone").value
+    })
       .then(function(response) {
         alert('Email sent successfully!');
         console.log('SUCCESS!', response.status, response.text);
