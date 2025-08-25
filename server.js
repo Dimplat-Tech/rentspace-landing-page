@@ -68,12 +68,14 @@ function sendEmail(){
     email: document.querySelector("#email").value,
     phone: document.querySelector("#phone").value,
   };
-  emailjs.send("service_45ijbft", "template_tpnxbv9", templateParams)
-    .then(function(response) {
-      console.log("Email sent successfully!", response);
+  emailjs
+  .send("service_45ijbft", "template_tpnxbv9", templateParams)
+    .then(() =>  {
+      console.log("Email sent successfully!");
       alert("Email sent successfully!");
-    }, function(error) {
-      console.log("Failed to send email.", error);
+    })
+    .catch((error) => {
+      console.log("Failed to send email.");
       alert("Failed to send email.");
     });
 }
