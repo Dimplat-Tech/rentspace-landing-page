@@ -64,10 +64,9 @@
 
 function sendEmail(){
   const templateParams = {
-    name: document.querySelector("#name").value,
-    email: document.querySelector("#email").value,
-    phone: document.querySelector("#phone").value,
-    
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
   };
   emailjs.send("service_45ijbft", "template_tpnxbv9", templateParams)
     .then(function(response) {
