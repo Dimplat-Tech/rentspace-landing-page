@@ -4,7 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RentSpace Waitlist</title>
-  <style>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "m6Q_IysaaC6Xd7AVW",
+      });
+   })();
+</script>
+<style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -106,6 +116,8 @@
       text-decoration: underline;
     }
   </style>
+
+
 </head>
 <body>
 
@@ -166,7 +178,9 @@
     emailjs.init("m6Q_IysaaC6Xd7AVW"); // Replace with your actual public key
   })();
 </script>
-<script>
+<script type='text/javascript' src="server.js"></script>
+
+<!-- <script>
   document.getElementById('waitlistForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -180,7 +194,7 @@
       });
   });
 </script>
-
+ -->
   <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> 
 
 
